@@ -14,7 +14,7 @@ public class Progression {
         var questions = new String[3];
         var correctAnswers = new String[3];
 
-        for (var i = 0; i < 3; i++) {
+        for (var i = 0; i < Engine.GAMES_ROUND_QUANTITY; i++) {
             Random random = new Random();
             var progressionStep = random.nextInt(minProgressionStep, maxProgressionSTEP);
             var progressionNumber = random.nextInt(maxFirstNumber);

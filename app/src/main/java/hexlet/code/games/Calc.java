@@ -13,7 +13,7 @@ public class Calc {
         var questions = new String[3];
         var correctAnswers = new String[3];
 
-        for (var i = 0; i < 3; i++) {
+        for (var i = 0; i < Engine.GAMES_ROUND_QUANTITY; i++) {
             Random random = new Random();
             var number1 = random.nextInt(maxRandomNumber);
             var number2 = random.nextInt(maxRandomNumber);

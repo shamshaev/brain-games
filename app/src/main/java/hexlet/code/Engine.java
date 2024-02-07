@@ -3,6 +3,7 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
+    public static final int GAMES_ROUND_QUANTITY = 3;
     public static void playGame(String rule, String[] questions, String[] correctAnswers) {
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
@@ -30,7 +31,7 @@ public class Engine {
             }
 
             i++;
-        } while (isUserCorrect && i < 3);
+        } while (isUserCorrect && i < GAMES_ROUND_QUANTITY);
 
         if (isUserCorrect) {
             System.out.println("Congratulations, " + userName + "!");
