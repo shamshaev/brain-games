@@ -11,8 +11,8 @@ public class Progression {
         final int maxProgressionSTEP = 10;
         final int progressionLength = 10;
 
-        var questions = new String[3];
-        var correctAnswers = new String[3];
+        var questions = new String[Engine.GAMES_ROUND_QUANTITY];
+        var correctAnswers = new String[Engine.GAMES_ROUND_QUANTITY];
 
         for (var i = 0; i < Engine.GAMES_ROUND_QUANTITY; i++) {
             Random random = new Random();

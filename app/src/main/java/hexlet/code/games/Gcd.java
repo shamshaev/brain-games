@@ -8,8 +8,8 @@ public class Gcd {
         final String rule = "Find the greatest common divisor of given numbers.";
         final int maxRandomNumber = 100;
 
-        var questions = new String[3];
-        var correctAnswers = new String[3];
+        var questions = new String[Engine.GAMES_ROUND_QUANTITY];
+        var correctAnswers = new String[Engine.GAMES_ROUND_QUANTITY];
 
         for (var i = 0; i < Engine.GAMES_ROUND_QUANTITY; i++) {
             Random random = new Random();
