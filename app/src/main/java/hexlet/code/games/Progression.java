@@ -1,36 +1,40 @@
 package hexlet.code.games;
 
-import java.util.Random;
+import hexlet.code.Utils;
 import hexlet.code.Engine;
 
 public class Progression {
     public static void playProgression() {
         final String rule = "What number is missing in the progression?";
         final int maxFirstNumber = 20;
-        final int minProgressionStep = 2;
-        final int maxProgressionSTEP = 10;
-        final int progressionLength = 10;
+        final int minStep = 2;
+        final int maxStep = 10;
+        final int length = 10;
 
-        var questions = new String[Engine.GAMES_ROUND_QUANTITY];
-        var correctAnswers = new String[Engine.GAMES_ROUND_QUANTITY];
+        var roundsData = new String[Engine.ROUNDS_COUNT][2];
 
-        for (var i = 0; i < Engine.GAMES_ROUND_QUANTITY; i++) {
-            Random random = new Random();
-            var progressionStep = random.nextInt(minProgressionStep, maxProgressionSTEP);
-            var progressionNumber = random.nextInt(maxFirstNumber);
-            var missingNumberIndex = random.nextInt(progressionLength);
-            questions[i] = "";
+        for (var i = 0; i < Engine.ROUNDS_COUNT; i++) {
+            var firstNumber = Utils.generateNumber(maxFirstNumber);
+            var step = Utils.generateNumber(minStep, maxStep);
+            var index = Utils.generateNumber(length);
+            var progression = getProgression(firstNumber, step, length);
 
-            for (int j = 0; j < progressionLength; j++) {
-                if (j != missingNumberIndex) {
-                    questions[i] += progressionNumber + " ";
-                } else {
-                    questions[i] += ".. ";
-                    correctAnswers[i] = Integer.toString(progressionNumber);
-                }
-                progressionNumber += progressionStep;
-            }
+            var answer = progression[index];
+            progression[index] = "..";
+            var question = String.join(" ", progression);
+
+            roundsData[i][0] = question;
+            roundsData[i][1] = answer;
         }
-        Engine.playGame(rule, questions, correctAnswers);
+        Engine.playGame(rule, roundsData);
+    }
+
+    public static String[] getProgression(int firstNumber, int step, int length) {
+        var progression = new String[length];
+
+        for (var i = 0; i < progression.length; i++) {
+            progression[i] = Integer.toString(firstNumber + step * i);
+        }
+        return progression;
     }
 }

@@ -9,5 +9,6 @@ public class Cli {
         Scanner scanner = new Scanner(System.in);
         var userName = scanner.nextLine();
         System.out.println("Hello, " + userName + "!");
+        scanner.close();
     }
 }
