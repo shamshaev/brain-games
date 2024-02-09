@@ -6,13 +6,14 @@ import hexlet.code.Engine;
 public class Gcd {
     public static void playGcd() {
         final String rule = "Find the greatest common divisor of given numbers.";
+        final int minNumber = 1;
         final int maxNumber = 100;
 
         var roundsData = new String[Engine.ROUNDS_COUNT][2];
 
         for (var i = 0; i < Engine.ROUNDS_COUNT; i++) {
-            var number1 = Utils.generateNumber(maxNumber);
-            var number2 = Utils.generateNumber(maxNumber);
+            var number1 = Utils.generateNumber(minNumber, maxNumber);
+            var number2 = Utils.generateNumber(minNumber, maxNumber);
 
             var question = number1 + " " + number2;
             var answer = Integer.toString(getGcd(number1, number2));
