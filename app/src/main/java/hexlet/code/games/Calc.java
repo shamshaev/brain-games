@@ -29,7 +29,9 @@ public class Calc {
         return switch (operator) {
             case '+' -> number1 + number2;
             case '-' -> number1 - number2;
-            default -> number1 * number2;
+            case '*' -> number1 * number2;
+            default -> throw new RuntimeException("Unknown input: " + operator);
+
         };
     }
 }
