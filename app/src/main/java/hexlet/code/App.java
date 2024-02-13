@@ -44,7 +44,7 @@ public class App {
             case "0":
                 break;
             default:
-                System.out.println("Unknown game number. Please, try again.");
+                System.out.println("Unknown game number: " + userChoice);
         }
     }
 }
