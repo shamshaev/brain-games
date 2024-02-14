@@ -1,27 +1,14 @@
+# Ignore Gradle project-specific cache directory
 .gradle
-build/
-!gradle/wrapper/gradle-wrapper.jar
-!**/src/main/**/build/
-!**/src/test/**/build/
 
-### IntelliJ IDEA ###
-out/
+# Ignore Gradle build output directory
+build
+
+**/logs/
+
+.settings
+bin
+.project*
+.classpath
 .idea/
-.idea_modules/
-*.iws
-*.iml
-*.ipr
-!**/src/main/**/out/
-!**/src/test/**/out/
-
-### Java ###
-.mtj.tmp/
-*.class
-*.war
-*.ear
-*.nar
-hs_err_pid*
-replay_pid*
-
-### Others ###
-*.log
+.factorypath
