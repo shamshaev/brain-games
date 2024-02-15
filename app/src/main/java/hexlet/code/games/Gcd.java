@@ -16,7 +16,7 @@ public class Gcd {
             var number2 = Utils.generateNumber(minNumber, maxNumber);
 
             var question = number1 + " " + number2;
-            var answer = Integer.toString(getGcd(number1, number2));
+            var answer = Integer.toString(gcd(number1, number2));
 
             roundsData[i][0] = question;
             roundsData[i][1] = answer;
@@ -24,7 +24,7 @@ public class Gcd {
         Engine.playGame(rule, roundsData);
     }
 
-    public static int getGcd(int number1, int number2) {
+    public static int gcd(int number1, int number2) {
         var gcd = 1;
         for (var i = 2; i <= Math.min(number1, number2); i++) {
             if (number1 % i == 0 && number2 % i == 0) {
